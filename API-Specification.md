@@ -245,3 +245,25 @@ Requests which return list containing multiple items SHOULD be paginated with
 30 items be default. Clients SHOULD be able to specify custom pages via
 the `?page={PAGE_NUMBER}` query parameter. Page numbers MUST begin at `1`.
 Clients SHOULD be able to specify items per page via `?per_page={NUM_ITEMS}`.
+
+## User Agent
+
+Clients MUST supply a valid `User-Agent` header in their requests.
+
+For the WeChat app, the `User-Agent` should take the form
+
+```http
+User-Agent: UCLCSSA-WeChat-App ({PLATFORM}; rv:{VERSION})
+```
+
+Where `{PLATFORM}` is the native platform information, e.g. `iOS` or `Andriod`,
+and `{VERSION}` is the client version.
+
+For example, for UCLCSSA WeChat App on iOS with version `1.0.0-rc1`, its
+`User-Agent` should be
+
+```http
+User-Agent: UCLCSSA-WeChat-App (ios; rv:"1.0.0-rc1")
+```
+
+This allows for diagnostics and user-agent monitoring.
