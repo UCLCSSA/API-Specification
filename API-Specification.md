@@ -45,7 +45,7 @@ For example, the response to a `GET` request to
 `https://api.uclcssa.cn/users/testuser` should return the headers
 
 ```http
-GET https://api.uclccsa.cn/users/testuser
+curl -i https://api.uclccsa.cn/users/testuser
 HTTP/1.1 200 OK
 Server: nginx
 Date: Thu, 13 Jun 2019 16:50:11 GMT
