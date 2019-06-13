@@ -238,3 +238,10 @@ Suitable HTTP Verbs SHOULD be used to convey action semantics:
 | `PATCH`   | Update resource.              |
 | `PUT`     | Replace resource.             |
 | `DELETE`  | Delete resource.              |
+
+## Pagination
+
+Requests which return list containing multiple items SHOULD be paginated with
+30 items be default. Clients SHOULD be able to specify custom pages via
+the `?page={PAGE_NUMBER}` query parameter. Page numbers MUST begin at `1`.
+Clients SHOULD be able to specify items per page via `?per_page={NUM_ITEMS}`.
