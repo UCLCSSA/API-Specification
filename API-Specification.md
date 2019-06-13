@@ -5,6 +5,7 @@
 This specification documents the UCLSSA API v1 for interoperability between
 clients and services. The specification builds atop of:
 
+- HTTP/1.1 network protocol: [RFC2616](https://tools.ietf.org/html/rfc2616)
 - API style: [REST](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
 - Data interchange format: [JSON](https://www.json.org/)
 - Client-Server communication protocol: [HTTP/1.1 @ RFC7230](https://tools.ietf.org/html/rfc7230)
