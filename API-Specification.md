@@ -20,3 +20,16 @@ This API specification is modeled after [GitHub API v3](https://developer.github
 The requirement level keywords "MUST", "MUST NOT", "REQUIRED", "SHALL",
 "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" used
 in this specification are intended to be interpreted according to [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
+
+## Current API Version
+
+By default, all requests to `https://api.uclcssa.cn` SHALL dispatch to the `v1`
+REST API. All requests SHOULD explicitly include the `Accept` HTTP header for
+stability against API changes.
+
+```
+Accept: application/vnd.uclcssa.v1+json
+```
+
+For more details, refer to [Media Types](#media-types).
+
