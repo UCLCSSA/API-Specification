@@ -225,3 +225,16 @@ destination URI of the resource.
 | ---------------- | --------------------------------------------------------- |
 | `301`            | Permanent redirection. Clients SHOULD migrate to new URI. |
 | `302`, `307`     | Temporary redirection. Clients SHOULD use original URI.   |
+
+## HTTP Verbs
+
+Suitable HTTP Verbs SHOULD be used to convey action semantics:
+
+| HTTP Verb | Description                   |
+| --------- | ----------------------------- |
+| `HEAD`    | Get only header information.  |
+| `GET`     | Fetching resource.            |
+| `POST`    | Create resource.              |
+| `PATCH`   | Update resource.              |
+| `PUT`     | Replace resource.             |
+| `DELETE`  | Delete resource.              |
