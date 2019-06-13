@@ -1,9 +1,9 @@
-# UCLCSSA API Specification
+# UCLCSSA API v1 Specification
 
 ## Introduction
 
-This specification documents the API for interoperability between clients
-and services. The specification builds atop of:
+This specification documents the UCLSSA API v1 for interoperability between
+clients and services. The specification builds atop of:
 
 - API style: [REST](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)
 - Data interchange format: [JSON](https://www.json.org/)
