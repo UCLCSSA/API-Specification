@@ -74,7 +74,8 @@ load-balancing is not yet considered in `v1` API.
 Should the request's `ETag` token match the desired resource of the server,
 then no payload need to be returned. The server SHOULD return a `304 Not
 Modified` status code.
-- `Content-Length` specifies the size of the body in bytes.
+- `Content-Length` specifies the size of the body in bytes, and MUST be
+included.
 
 Blank fields MUST be included with value `null` instead of being omitted.
 
