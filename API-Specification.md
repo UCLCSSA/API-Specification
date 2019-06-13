@@ -94,3 +94,33 @@ representations of the restaurants are returned.
 When requesting an individual resource, such as a `library`, all of its
 attributes and detailed information are returned, depending on the requester's
 permissions.
+
+## Authentication
+
+All authentication for restricting access to server resources MUST be handled
+via [OAuth 2.0](https://oauth.net/2/) mechanisms (hereafter abbreviated as
+`OAuth2`), standardized by
+[RFC6749](http://tools.ietf.org/html/rfc6749).
+
+Tutorials for `OAuth2` can be found at [bubblecode](http://www.bubblecode.net/en/2016/01/22/understanding-oauth2/).
+
+When clients successfully register with the authentication server via
+`UCL email address` and `WeChat id`, they are granted specific OAuth2 `tokens`.
+
+Upon requesting any access-restricted resource, as such personal timetables,
+the client MUST send their OAuth2 `token` via the `Authorization` http header.
+
+For example,
+
+```http
+curl -H "Authorization: token {OAUTH-TOKEN}" https://api.uclcssa.cn
+```
+
+### Failed Login Limit
+
+Upon receiving invalid credentials, the server MUST return `401 Unauthorized`
+status code to notify the client.
+
+Upon 5 requests trying to authenticate via invalid credentials, the server
+MUST reject any authentication requests from the client for 10 minutes,
+beginning from the fifth failed attempt, with the status code `403 Forbidden`.
