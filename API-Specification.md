@@ -211,3 +211,16 @@ Content-Length: 191
   ]
 }
 ```
+
+## HTTP Redirects
+
+Clients SHOULD assume that any requests to resources may cause a redirect
+response, which clients SHOULD follow.
+
+Redirect responses MUST contain the `Location` header field which specifies the
+destination URI of the resource.
+
+| HTTP Status Code | Description                                               |
+| ---------------- | --------------------------------------------------------- |
+| `301`            | Permanent redirection. Clients SHOULD migrate to new URI. |
+| `302`, `307`     | Temporary redirection. Clients SHOULD use original URI.   |
