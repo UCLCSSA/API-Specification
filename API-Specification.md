@@ -183,8 +183,6 @@ entries for diagnostics.
 
 Possible validation error codes include:
 
-> TODO: To be amended
-
 | Error Code        | Description                                   |
 | ----------------- | --------------------------------------------- |
 | `missing`         | Resource does not exist.                      |
