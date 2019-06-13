@@ -54,8 +54,6 @@ Content-Encoding: gzip
 Content-Length: 5
 Connection: keep-alive
 Status: 200 OK
-ETag: "5eb63bbbe01eeed093cb22bb8f5acdc3"
-Cache-Control: max-age=0, private, must-revalidate
 X-Media-Type: uclcssa.v1
 X-Content-Type-Options: nosniff
 ```
@@ -70,10 +68,7 @@ Notes:
 - `X-Media-Type: uclcssa.v1` specifies the API version as `v1`.
 - There are no rate limits yet - restricting traffic flow, e.g. for
 load-balancing is not yet considered in `v1` API.
-- `ETag` header contains a validation token to facilitate resource caching.
-Should the request's `ETag` token match the desired resource of the server,
-then no payload need to be returned. The server SHOULD return a `304 Not
-Modified` status code.
+- There are no caching support yet.
 - `Content-Length` specifies the size of the body in bytes, and MUST be
 included.
 
