@@ -21,6 +21,9 @@ The requirement level keywords "MUST", "MUST NOT", "REQUIRED", "SHALL",
 "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" used
 in this specification are intended to be interpreted according to [RFC2119](https://www.ietf.org/rfc/rfc2119.txt).
 
+Relevant terminology from the `HTTP/1.1` (`RFC2616`) standard is used where
+appropriate, such as `header`, `body`.
+
 ## Current API Version
 
 By default, all requests to `https://api.uclcssa.cn` SHALL dispatch to the `v1`
