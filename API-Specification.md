@@ -124,3 +124,14 @@ status code to notify the client.
 Upon 5 requests trying to authenticate via invalid credentials, the server
 MUST reject any authentication requests from the client for 10 minutes,
 beginning from the fifth failed attempt, with the status code `403 Forbidden`.
+
+## Parameters
+
+For `GET` requests, parameters SHOULD be passed as `HTTP query string parameter`,
+with the format `https://api.uclcssa.cn/resource?{key1}={value1}&{key2}={value2}`.
+
+That is, query string parameters are suffixes to the URI of the resource,
+beginning with query operator `?`, then followed by key-value pairs, with
+multiple pairs conjuncted with the `&` operator.
+
+Additional data SHALL be sent as `JSON` body (i.e. `Content`).
