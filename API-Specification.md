@@ -100,8 +100,9 @@ via [OAuth 2.0](https://oauth.net/2/) mechanisms (hereafter abbreviated as
 
 Tutorials for `OAuth2` can be found at [bubblecode](http://www.bubblecode.net/en/2016/01/22/understanding-oauth2/).
 
-When clients successfully register with the authentication server via
-`UCL email address` and `WeChat id`, they are granted specific OAuth2 `tokens`.
+The user SHOULD register with WeChat authentication. The user SHOULD be able to
+additionally bind their WeChat id to their UCL email address for personalized
+UCL API related capabilities, such as personal timetables.
 
 Upon requesting any access-restricted resource, as such personal timetables,
 the client MUST send their OAuth2 `token` via the `Authorization` http header.
@@ -240,6 +241,13 @@ Requests which return list containing multiple items SHOULD be paginated with
 30 items be default. Clients SHOULD be able to specify custom pages via
 the `?page={PAGE_NUMBER}` query parameter. Page numbers MUST begin at `1`.
 Clients SHOULD be able to specify items per page via `?per_page={NUM_ITEMS}`.
+
+For feed pagination, the client SHOULD be responsible for storing the latest
+post id. The server SHOULD allow the client to access posts by offset, e.g.
+
+```http
+/posts?offset={OFFSET_AMOUNT}&per_page={NUM_ITEMS}
+```
 
 ## User Agent
 
