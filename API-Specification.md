@@ -41,8 +41,8 @@ For more details, refer to [Media Types](#media-types).
 All API communication MUST occur over HTTPS, at `https://api.uclcssa.cn`. The
 data interchange format used MUST be JSON.
 
-For example, the response to a `GET` request to
-`https://api.uclcssa.cn/users/testuser` should return the headers
+For example, the response to a request to `https://api.uclcssa.cn/users/testuser`
+fetching headers should return
 
 ```http
 curl -i https://api.uclccsa.cn/users/testuser
