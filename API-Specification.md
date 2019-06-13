@@ -88,3 +88,9 @@ representations* are returned for performance reasons.
 
 For example, when trying to fetch a list of nearby restaurants, only the summary
 representations of the restaurants are returned.
+
+## Detailed Representations
+
+When requesting an individual resource, such as a `library`, all of its
+attributes and detailed information are returned, depending on the requester's
+permissions.
