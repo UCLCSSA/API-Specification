@@ -253,7 +253,7 @@ Clients MUST supply a valid `User-Agent` header in their requests.
 For the WeChat app, the `User-Agent` should take the form
 
 ```http
-User-Agent: UCLCSSA-WeChat-App ({PLATFORM}; rv:{VERSION})
+User-Agent: UCLCSSA-WeChat-App ("{PLATFORM}"; rv:"{VERSION}")
 ```
 
 Where `{PLATFORM}` is the native platform information, e.g. `iOS` or `Andriod`,
@@ -263,7 +263,7 @@ For example, for UCLCSSA WeChat App on iOS with version `1.0.0-rc1`, its
 `User-Agent` should be
 
 ```http
-User-Agent: UCLCSSA-WeChat-App (ios; rv:"1.0.0-rc1")
+User-Agent: UCLCSSA-WeChat-App ("ios"; rv:"1.0.0-rc1")
 ```
 
 This allows for diagnostics and user-agent monitoring.
