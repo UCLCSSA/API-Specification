@@ -80,3 +80,11 @@ Blank fields MUST be included with value `null` instead of being omitted.
 
 All timestamps MUST be returned in [RFC3339](https://tools.ietf.org/html/rfc3339)
 format.
+
+## Summary Representations
+
+When requesting a *list* of certain resources, only their *summary
+representations* are returned for performance reasons.
+
+For example, when trying to fetch a list of nearby restaurants, only the summary
+representations of the restaurants are returned.
