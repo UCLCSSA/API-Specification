@@ -135,3 +135,81 @@ beginning with query operator `?`, then followed by key-value pairs, with
 multiple pairs conjuncted with the `&` operator.
 
 Additional data SHALL be sent as `JSON` body (i.e. `Content`).
+
+## Client Errors
+
+If clients send requests with invalid JSON body, that is, if clients send:
+
+1. **Invalid JSON**: The server MUST return with `400 Bad Request` response.
+
+```http
+HTTP/1.1 400 Bad Request
+Content-Length: 31
+
+{"message":"Cannot parse JSON"}
+```
+
+2. **Incorrect JSON value types**: The server MUST return with `400 Bad Request`
+response.
+
+```http
+HTTP/1.1 400 Bad Request
+Content-Length: 40
+
+{"message":"Incorrect JSON value types"}
+```
+
+3. **Invalid fields**: The server MUST return with `422 Unprocessable Entity`
+response.
+
+```http
+HTTP/1.1 422 Unprocessable Entity
+Content-Length: 149
+
+{
+  "message": "Validation Failed",
+  "errors": [
+    {
+      "resource": "Library",
+      "field": "title",
+      "code": "missing-field"
+    }
+  ]
+}
+```
+
+Each `error` object in `errors` SHOULD contain `resource`, `field` and `code`
+entries for diagnostics.
+
+Possible validation error codes include:
+
+> TODO: To be amended
+
+| Error Code        | Description                                   |
+| ----------------- | --------------------------------------------- |
+| `missing`         | Resource does not exist.                      |
+| `missing-field`   | Required field missing.                       |
+| `invalid`         | Incorrect formatting.                         |
+| `duplicate`       | Resource with identical value already exists. |
+
+Resources MAY also respond with `custom` error codes, which means they MUST
+then have a complementary `message` field for describing the problem.
+
+For example,
+
+```http
+HTTP/1.1 422 Unprocessable Entity
+Content-Length: 191
+
+{
+  "message": "Validation Failed",
+  "errors": [
+    {
+      "resource": "Library",
+      "field": "title",
+      "code": "custom",
+      "message": "UCL API service unavailable"
+    }
+  ]
+}
+```
